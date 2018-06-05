@@ -1,6 +1,7 @@
 import {Component} from 'react'
 import Widget from '../../widget'
 import Clock from 'react-live-clock'
+import Weather from '../weather'
 
 export default class Date extends Component {
     render() {
