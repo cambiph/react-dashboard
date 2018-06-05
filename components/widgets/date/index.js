@@ -17,7 +17,11 @@ export default class Date extends Component {
                     timezone={'Europe/Brussels'}/>
             </div>
             <div>
-                
+              <Weather
+                city='Mechelen'
+                units='metric'
+                apiKey='c3a848060e0570d311a3b93c4d6a6eb1'
+              />
             </div>
         </Widget>
     }
