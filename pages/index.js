@@ -5,6 +5,7 @@ import SonarQube from '../components/widgets/sonarqube'
 import Jenkins from '../components/widgets/jenkins'
 import Date from '../components/widgets/date'
 import JiraIssueCount from '../components/widgets/jira/issue-count'
+import Weather from '../components/widgets/weather'
 
 // Theme
 import darkTheme from '../styles/dark-theme'
@@ -29,6 +30,11 @@ export default () => (
       url='https://delijn.atlassian.net'
       query='project = RISE AND status = "To Do" AND resolution = Unresolved'
       authKey='jira'
+    />
+    <Weather
+      city='Mechelen'
+      units='metric'
+      apiKey='c3a848060e0570d311a3b93c4d6a6eb1'
     />
   </Dashboard>
 )
