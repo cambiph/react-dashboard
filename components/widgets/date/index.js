@@ -17,7 +17,7 @@ export default class Date extends Component {
                     format={'ddd, d MMMM YYYY'}
                     timezone={'Europe/Brussels'}/>
             </div>
-            <div>
+            <div style={{fontSize: '2em', textAlign: 'center'}}>
               <Weather
                 city='Mechelen'
                 units='metric'

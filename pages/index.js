@@ -31,10 +31,5 @@ export default () => (
       query='project = RISE AND status = "To Do" AND resolution = Unresolved'
       authKey='jira'
     />
-    <Weather
-      city='Mechelen'
-      units='metric'
-      apiKey='c3a848060e0570d311a3b93c4d6a6eb1'
-    />
   </Dashboard>
 )
