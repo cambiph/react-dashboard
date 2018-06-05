@@ -1,7 +1,6 @@
-import {Component} from 'react'
+import { Component } from 'react'
 import fetch from 'isomorphic-unfetch'
 import yup from 'yup'
-import Widget from '../../widget'
 import Temperature from '../../temperature'
 
 const schema = yup.object().shape({
@@ -12,14 +11,11 @@ const schema = yup.object().shape({
 
 export default class Weather extends Component {
     static defaultProps = {
-        interval: 1000 * 60 * 5,
-        title: 'Weather'
+        interval: 1000 * 60 * 5
     }
 
     state = {
-        temp: 0,
-        error: false,
-        loading: true
+        temp: 0
     }
 
     componentDidMount() {
@@ -27,7 +23,6 @@ export default class Weather extends Component {
             .then(() => this.fetchInformation())
             .catch((err) => {
                 console.error(`${err.name} @ ${this.constructor.name}`, err.errors)
-                this.setState({error: true, loading: false})
             })
     }
 
@@ -42,21 +37,16 @@ export default class Weather extends Component {
             const res = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`)
             const json = await res.json()
 
-            this.setState({temp: json.main.temp, error: false, loading: false})
-        } catch (error) {
-            this.setState({error: true, loading: false})
+            this.setState({temp: json.main.temp})
         } finally {
             this.timeout = setTimeout(() => this.fetchInformation(), this.props.interval)
         }
     }
 
     render() {
-        const {temp, error, loading} = this.state
-        const {title} = this.props
+        const {temp} = this.state
         return (
-            <Widget title={title} loading={loading} error={error}>
                 <Temperature value={Math.round(temp)}/>
-            </Widget>
         )
     }
 }
