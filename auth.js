@@ -8,12 +8,12 @@ export default {
     password: process.env.ELASTICSEARCH_PASS
   },
   jenkins: {
-    username: process.env.JENKINS_USER,
-    password: process.env.JENKINS_PASS
+    username: 'pcambien',
+    password: 'DeLijn2017'
   },
   jira: {
-    username: process.env.JIRA_USER,
-    password: process.env.JIRA_PASS
+    username: 'philippe.cambien.ext@delijn.be',
+    password: 'mo0108AT'
   },
   sonarqube: {
     username: process.env.SONARQUBE_USER,
